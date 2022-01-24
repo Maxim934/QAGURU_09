@@ -10,5 +10,8 @@ public class TestBase {
     @BeforeAll
     static void config() {
         Configuration.startMaximized = true;
+        Configuration.remote = "http://65.108.161.82:4444/wd/hub/";
+
     }
+
 }
