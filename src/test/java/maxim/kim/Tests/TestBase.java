@@ -2,7 +2,9 @@ package maxim.kim.Tests;
 
 import com.codeborne.selenide.Configuration;
 import maxim.kim.Pages.RegistrationPage;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
@@ -10,7 +12,22 @@ public class TestBase {
     @BeforeAll
     static void config() {
         Configuration.startMaximized = true;
-        Configuration.remote = "http://65.108.161.82:4444/wd/hub/";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+
+        Configuration.browserCapabilities = capabilities;
+    }
+//
+//    @AfterEach
+//    public void tearDown() {
+//        Attach.screenshotAs("Last screenshot");
+//        Attach.pageSource();
+//        Attach.browserConsoleLogs();
+//        Attach.addVideo();
+//    }
 
     }
 
