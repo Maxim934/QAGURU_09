@@ -12,15 +12,14 @@ public class TestBase {
     @BeforeAll
     static void config() {
         Configuration.startMaximized = true;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-
+        Configuration.remote = "http://65.108.161.82:4444/wd/hub/";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
     }
-//
+
 //    @AfterEach
 //    public void tearDown() {
 //        Attach.screenshotAs("Last screenshot");
