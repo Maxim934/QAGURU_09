@@ -19,7 +19,6 @@ public class FieldsTest extends TestBase {
                 .setBirthDate(day, month, year)
                 .setSubject()
                 .setHobbie()
-                .uploadImage("src/test/resources/img.png")
                 .setAdress(address)
                 .chooseStateAndCity();
     }
