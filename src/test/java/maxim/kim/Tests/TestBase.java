@@ -1,6 +1,8 @@
 package maxim.kim.Tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import maxim.kim.Pages.RegistrationPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -11,6 +13,7 @@ public class TestBase {
 
     @BeforeAll
     static void config() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.startMaximized = true;
         Configuration.remote = "http://65.108.161.82:4444/wd/hub/";
         DesiredCapabilities capabilities = new DesiredCapabilities();
