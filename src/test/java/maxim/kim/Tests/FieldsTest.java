@@ -32,7 +32,6 @@ public class FieldsTest extends TestBase {
                 .checkResultsValue("Gender", "Male")
                 .checkResultsValue("Mobile", mobilePhone)
                 .checkResultsValue("Date of Birth", day + " " + month + "," + year)
-                .checkResultsValue("Picture", "img.png")
                 .checkResultsValue("Address", address);
     }
 
